@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 MAINTAINER Soul Assassino
 
-ENV TS_VERSION=MatriX.105
+ENV TS_VERSION=MatriX.106
 ENV TZ=Europe/Kiev
 
 EXPOSE 8090:8090
