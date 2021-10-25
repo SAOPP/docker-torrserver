@@ -1,7 +1,7 @@
 FROM ubuntu:focal
 MAINTAINER Soul Assassino
 
-ENV TS_VERSION=MatriX.106
+ENV TS_VERSION=MatriX.109
 ENV TZ=Europe/Kiev
 
 EXPOSE 8090:8090
@@ -12,7 +12,7 @@ RUN echo $TZ > /etc/timezone && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
     mkdir /torrserver/ && cd /torrserver/ && mkdir /db && \
-    wget -O TorrServer -P /torrserver/ "https://github.com/YouROK/TorrServer/releases/download/$TS_VERSION/TorrServer-linux-amd64" && \
+    wget -O TorrServer -P /torrserver/ "http://releases.yourok.ru/torr/server/TorrServer-linux-amd64" && \
     chmod +x /torrserver/TorrServer
 
 ENTRYPOINT ["/torrserver/TorrServer"]
