@@ -14,6 +14,8 @@ RUN echo $TZ > /etc/timezone && \
     mkdir /torrserver/ && cd /torrserver/ && mkdir /db && \
     wget -O TorrServer -P /torrserver/ "http://releases.yourok.ru/torr/server/TorrServer-linux-amd64" && \
     chmod +x /torrserver/TorrServer
+    
+HEALTHCHECK --interval=30s --timeout=15s --retries=5 CMD curl -sS 127.0.0.1:8090 || exit 1
 
 ENTRYPOINT ["/torrserver/TorrServer"]
 CMD ["--path", "/torrserver/db"]
