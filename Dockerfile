@@ -7,7 +7,7 @@ ENV TZ=Europe/Kiev
 EXPOSE 8090:8090
 
 RUN echo $TZ > /etc/timezone && \
-    apt-get update && apt-get install -y tzdata wget && \
+    apt-get update && apt-get install -y tzdata wget curl && \
     rm /etc/localtime && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
