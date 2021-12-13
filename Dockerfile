@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER Soul Assassino
 
-ENV TS_VERSION=MatriX.109
+ENV TS_VERSION=MatriX.110
 ENV TZ=Europe/Kiev
 
 EXPOSE 8090:8090
